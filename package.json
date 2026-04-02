@@ -2,31 +2,23 @@
   "name": "test-case-creator",
   "version": "1.0.0",
   "description": "Full-stack test case creator application",
+  "main": "api/index.js",
+  "scripts": {
+    "dev": "npm run dev --workspace=backend",
+    "dev:backend": "npm run dev --workspace=backend",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "build": "npm run build --workspace=frontend",
+    "build:frontend": "npm run build --workspace=frontend",
+    "start": "npm run start --workspace=backend",
+    "vercel-deploy": "vercel --prod",
+    "test-deployment": "node test-deployment.js"
+  },
   "workspaces": [
     "backend",
     "frontend"
   ],
-  "scripts": {
-    "install:all": "npm install",
-    "dev": "npm run dev:backend",
-    "dev:backend": "npm run dev --workspace=backend",
-    "dev:frontend": "npm run dev --workspace=frontend",
-    "build:frontend": "npm run build --workspace=frontend",
-    "build": "npm run build:frontend",
-    "start:backend": "npm run start --workspace=backend",
-    "vercel-deploy": "vercel --prod",
-    "test-deployment": "node test-deployment.js"
-  },
-  "dependencies": {
-    "@google/generative-ai": "^0.24.1",
-    "@supabase/supabase-js": "^2.101.0",
-    "cors": "^2.8.6",
-    "dotenv": "^17.3.1",
-    "express": "^5.2.1",
-    "lucide-react": "^1.7.0",
-    "morgan": "^1.10.1",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+  "engines": {
+    "node": ">=18.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",

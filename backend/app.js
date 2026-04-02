@@ -58,13 +58,7 @@ app.get("/api/dashboard", (req, res) => {
   });
 });
 
-// Serve static files from the React app build directory
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
-
-// Catch all handler: send back React's index.html file for any non-API routes
-app.get(/^(?!\/api).*/, (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
-});
-
 // For Vercel deployment, we don't serve static files from backend
+// The frontend is served separately by Vercel's static build
+
 export default app;
